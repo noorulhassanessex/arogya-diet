@@ -50,7 +50,19 @@ improved nutritional intake graphs that highlight the distribution of nutrients 
 
 Time Spent: 3 hours
 
-**Issue Links:**
+**Task Links:**
+
+https://csee-tuleap.essex.ac.uk/plugins/tracker/?aid=10047
+
+https://csee-tuleap.essex.ac.uk/plugins/tracker/?aid=10046
+
+https://csee-tuleap.essex.ac.uk/plugins/tracker/?aid=10029
+
+https://csee-tuleap.essex.ac.uk/plugins/tracker/?aid=10022
+
+https://csee-tuleap.essex.ac.uk/plugins/tracker/?aid=10017
+
+https://csee-tuleap.essex.ac.uk/plugins/tracker/?aid=10008
 
 
 # **Noor UL Hassan (Team 05)**
@@ -103,7 +115,20 @@ To guarantee easy navigation and usage, the user interface was examined and test
 
 Time Spent: 3 hours
 
-**Issue Links:**
+**Task Links:**
+
+https://csee-tuleap.essex.ac.uk/plugins/tracker/?aid=10042
+
+https://csee-tuleap.essex.ac.uk/plugins/tracker/?aid=10031
+
+https://csee-tuleap.essex.ac.uk/plugins/tracker/?aid=10024
+
+https://csee-tuleap.essex.ac.uk/plugins/tracker/?aid=10020
+
+https://csee-tuleap.essex.ac.uk/plugins/tracker/?aid=10014
+
+https://csee-tuleap.essex.ac.uk/plugins/tracker/?aid=10010
+
 
 
 # **Cacharel Mangu  (Team 05)**
@@ -156,7 +181,16 @@ Created a thorough guide to help users and dieticians understand the feeding and
 
 Time Spent: 3 hours
 
-**Issue Links:**
+**Task Links:**
+
+https://csee-tuleap.essex.ac.uk/plugins/tracker/?aid=10040
+
+https://csee-tuleap.essex.ac.uk/plugins/tracker/?aid=10039
+
+https://csee-tuleap.essex.ac.uk/plugins/tracker/?aid=10037
+
+https://csee-tuleap.essex.ac.uk/plugins/tracker/?aid=10025
+
 
 
 # **Ayomide Okubanjo (Team 05)**
@@ -215,7 +249,30 @@ worked on integrating the system's many components to make sure that trend analy
 
 Time Spent: 4 hours
 
-**Issue Links:**
+**Task Links:**
+
+https://csee-tuleap.essex.ac.uk/plugins/tracker/?aid=10045
+
+https://csee-tuleap.essex.ac.uk/plugins/tracker/?aid=10041
+
+https://csee-tuleap.essex.ac.uk/plugins/tracker/?aid=10035
+
+https://csee-tuleap.essex.ac.uk/plugins/tracker/?aid=10030
+
+https://csee-tuleap.essex.ac.uk/plugins/tracker/?aid=10028
+
+https://csee-tuleap.essex.ac.uk/plugins/tracker/?aid=10023
+
+https://csee-tuleap.essex.ac.uk/plugins/tracker/?aid=10019
+
+https://csee-tuleap.essex.ac.uk/plugins/tracker/?aid=10013
+
+https://csee-tuleap.essex.ac.uk/plugins/tracker/?aid=10009
+
+https://csee-tuleap.essex.ac.uk/plugins/tracker/?aid=10006
+
+https://csee-tuleap.essex.ac.uk/plugins/tracker/?aid=10005
+
 
 
 # **Nihat Shikhizada (Team 05)**
@@ -268,4 +325,21 @@ Worked on creating the report and alert system that lets users know when their d
 
 Time Spent: 5 hours
 
-**Issue Links:**
+**Task Links:**
+
+https://csee-tuleap.essex.ac.uk/plugins/tracker/?aid=10003&group_id=66
+
+https://csee-tuleap.essex.ac.uk/plugins/tracker/?aid=10044
+
+https://csee-tuleap.essex.ac.uk/plugins/tracker/?aid=10036
+
+https://csee-tuleap.essex.ac.uk/plugins/tracker/?aid=10034
+
+https://csee-tuleap.essex.ac.uk/plugins/tracker/?aid=10018
+
+https://csee-tuleap.essex.ac.uk/plugins/tracker/?aid=10012
+
+https://csee-tuleap.essex.ac.uk/plugins/tracker/?aid=10004
+
+https://csee-tuleap.essex.ac.uk/plugins/tracker/?aid=10003
+
