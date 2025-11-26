@@ -7,7 +7,8 @@ All of the pictures are in the chronological order displayed below:-
 _**1. Home Page**_
 
 ![image_alt](https://cseegit.essex.ac.uk/25-26-ce201-col/25-26_CE201-col_team05/-/raw/master/MVP/WhatsApp_Image_2025-11-22_at_14.33.56_8407c90a.jpg?ref_type=heads)
- This is the Home Page of the Arogya Diet Management, web-based diet tracker. It's home page displaying the name of the website, Arogya Diet and the main navigation bars of the website with the introductory line to it for the users to understand it:
+
+This is the Home Page of the Arogya Diet Management, web-based diet tracker. It's home page displaying the name of the website, Arogya Diet and the main navigation bars of the website with the introductory line to it for the users to understand it:
 
 1-Home 
 
@@ -25,10 +26,11 @@ This page above allows the user to add their daily meals which includes the meal
 
 _**3. About Page (Section 1)**_
 
-
  ![image_alt](https://cseegit.essex.ac.uk/25-26-ce201-col/25-26_CE201-col_team05/-/raw/master/MVP/AboutPAGE.jpeg)
 
 The Section 1 above is the "About" page of our website showing the exact purpose and the complete vision of our website, Arogya Diet.
 
-_**4. About Page (Setion 2)**_
+_**4. About Page (Section 2)**_
+![image_alt](https://cseegit.essex.ac.uk/25-26-ce201-col/25-26_CE201-col_team05/-/raw/master/MVP/Mission_of_Arogya_Diet.jpeg?ref_type=heads)
 
+The above (Section 2) extends the About Section 1 in it and explains about the mission of the Arogya. It tells about what arogya can do and how the users are benefits from this Arogya Diet Management Tool.
