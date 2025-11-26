@@ -2,8 +2,7 @@
 
 ### 1. Weekly Calorie Trend Chart
 
-**Screenshot:**  
-![Weekly Calorie Trend](f55ae2fa-9e0e-421b-ba1d-9696a247d8ec.png)
+https://cseegit.essex.ac.uk/25-26-ce201-col/25-26_CE201-col_team05/-/blob/master/MVP/weekly_calorie_trend.png?ref_type=heads
 
 This chart displays the user’s calorie intake across a seven-day period.  
 For the MVP stage, the graph uses sample calorie values to demonstrate how the trend analysis feature will function.  
@@ -14,8 +13,7 @@ Users will also have the option to switch between daily, weekly, and monthly vie
 
 ### 2. How the Graph Was Generated
 
-**Screenshot:**  
-![Python Code for Calorie Graph](b0b3bafd-5dd4-4569-b586-94bad3fb9784.png)
+https://cseegit.essex.ac.uk/25-26-ce201-col/25-26_CE201-col_team05/-/blob/master/MVP/python_code_-_weekly_calorie_trend.png?ref_type=heads
 
 The screenshot above displays the Python script used to generate the weekly calorie trend chart.  
 This demonstrates the backend process used to create visualisations for nutrient intake.  
