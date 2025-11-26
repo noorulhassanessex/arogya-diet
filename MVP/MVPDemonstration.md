@@ -24,3 +24,10 @@ _**2. Diet Management tracker**_
 This page above allows the user to add their daily meals which includes the meal type in it i.e, (Breakfast, Lunch or Dinner), an user input box where the user can add the food item, the quantity (in grams) and at final the option to add the meal.
 
 _**3. About Page (Section 1)**_
+
+
+ ![image_alt](https://cseegit.essex.ac.uk/25-26-ce201-col/25-26_CE201-col_team05/-/raw/master/MVP/AboutPAGE.jpeg)
+
+The Section 1 above is the "About" page of our website showing the exact purpose and the complete vision of our website, Arogya Diet.
+
+4.
