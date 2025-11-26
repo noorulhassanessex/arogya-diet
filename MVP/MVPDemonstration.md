@@ -30,4 +30,5 @@ _**3. About Page (Section 1)**_
 
 The Section 1 above is the "About" page of our website showing the exact purpose and the complete vision of our website, Arogya Diet.
 
-4.
+_**4. About Page (Setion 2)**_
+
