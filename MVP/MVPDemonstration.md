@@ -4,7 +4,7 @@ This Arogya Diet Management Tool is a simple and a web-based diet tracking using
 
 All of the pictures are in the chronological order displayed below:-
 
-**1. **Home Page***:*
+_**1. Home Page**_
 
 ![image_alt](https://cseegit.essex.ac.uk/25-26-ce201-col/25-26_CE201-col_team05/-/raw/master/MVP/WhatsApp_Image_2025-11-22_at_14.33.56_8407c90a.jpg?ref_type=heads)
  This is the Home Page of the Arogya Diet Management, web-based diet tracker. It's home page displaying the name of the website, Arogya Diet and the main navigation bars of the website with the introductory line to it for the users to understand it:
@@ -17,8 +17,10 @@ All of the pictures are in the chronological order displayed below:-
 
 4-About
 
-**_2.**_**Diet Management tracker**_**:_**
+_**2. Diet Management tracker**_
 
-![image_alt](https://cseegit.essex.ac.uk/25-26-ce201-col/25-26_CE201-col_team05/-/raw/master/MVP/PIC_22.jpeg)
+![image_alt](https:/****/cseegit.essex.ac.uk/25-26-ce201-col/25-26_CE201-col_team05/-/raw/master/MVP/PIC_22.jpeg)
 
-This page above allows the user to add their daily meals which includes the meal type in it i.e, (Breakfast, Lunch or Dinner), an user input box where the user can add the food item, the quantity()
+This page above allows the user to add their daily meals which includes the meal type in it i.e, (Breakfast, Lunch or Dinner), an user input box where the user can add the food item, the quantity (in grams) and at final the option to add the meal.
+
+_**3. About Page (Section 1)**_
