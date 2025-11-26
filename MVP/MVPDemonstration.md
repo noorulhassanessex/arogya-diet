@@ -19,7 +19,7 @@ _**1. Home Page**_
 
 _**2. Diet Management tracker**_
 
-![image_alt](https:/****/cseegit.essex.ac.uk/25-26-ce201-col/25-26_CE201-col_team05/-/raw/master/MVP/PIC_22.jpeg)
+![image_alt](https://cseegit.essex.ac.uk/25-26-ce201-col/25-26_CE201-col_team05/-/raw/master/MVP/PIC_22.jpeg?ref_type=heads)
 
 This page above allows the user to add their daily meals which includes the meal type in it i.e, (Breakfast, Lunch or Dinner), an user input box where the user can add the food item, the quantity (in grams) and at final the option to add the meal.
 
