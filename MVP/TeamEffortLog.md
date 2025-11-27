@@ -11,6 +11,7 @@ Team Organization and Communication Setup:
 Assigned responsibilities within the group and made sure that open lines of communication were created. To facilitate team coordination, a WhatsApp group was established.
 
 Time Spent: 3 hours
+
 Tuleap Setup:
 
 For the diet management tool project, I created and arranged tasks in Tuleap. made ensuring that team access and work classification were done correctly.
