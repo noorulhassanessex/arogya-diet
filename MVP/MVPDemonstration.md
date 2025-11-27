@@ -22,14 +22,23 @@ _**2. Diet Management tracker**_
 
 ![image_alt](https://cseegit.essex.ac.uk/25-26-ce201-col/25-26_CE201-col_team05/-/raw/master/MVP/PIC_22.jpeg?ref_type=heads)
 
-This page above allows the user to add their daily meals which includes the meal type in it i.e, (Breakfast, Lunch or Dinner), an user input box where the user can add the food item, the quantity (in grams) and at final the option to add the meal.
+This page above allows the user to add their daily meals which includes the meal type in it i.e, (Breakfast, Lunch or Dinner), an user input box where the user can add the food item, the quantity (in grams) and at final the option to add the meal. 
+Narrative:
+“The ‘Track Diet’ page lets users log what they eat. Users select a meal type, enter the food name, and specify the quantity in grams. Pressing ‘Add Meal’ will store this information.”
+
 Incomplete feature:
 •	“In the MVP, the form records values but does not yet display a full summary graph. The final version will compute calories and update dynamic charts.
 
 _**3. Meal Plan Page**_
 
  ![image_alt](https://cseegit.essex.ac.uk/25-26-ce201-col/25-26_CE201-col_team05/-/raw/master/MVP/AboutPAGE.jpeg)
-When the user clicks Meal Plan, they are taken to a page that displays a welcoming card titled ‘About’. This page is designed to show generated meal plans (future functionality). 
+When the user clicks Meal Plan, they are taken to a page that displays a welcoming card titled ‘About’. This page is designed to show generated meal plans (future functionality).  
+Narrative:
+“Clicking on ‘Meal Plan’ takes the user to the Meal Plan page. This section will display personalized meal plans. In the MVP version, a static placeholder card is shown, demonstrating the UI where dynamically generated meals will later appear.” 
+Narrative:
+“The ‘About’ page provides background information about Arogya. It explains the mission of the project, key features, and the reasons behind building this tool as part of a university assignment.”
+
+
 Incomplete feature:
 •	“The meal plan generation feature is not yet fully implemented.
 •	The current content is static and will be replaced with data-driven output in the final version. 
