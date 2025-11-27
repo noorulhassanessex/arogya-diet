@@ -8,12 +8,15 @@ Our weekly lab meetings have really been useful atleast for us who were always c
 # Sprint Burndown Charts
 
 1. Sprint 1
+
 ![image_alt](https://cseegit.essex.ac.uk/25-26-ce201-col/25-26_CE201-col_team05/-/raw/master/MVP/Burndown_Chart_sprint_1.png)
 
 2. Sprint 2 
+
 ![image_alt](https://cseegit.essex.ac.uk/25-26-ce201-col/25-26_CE201-col_team05/-/raw/master/MVP/Burndown_Chart_sprint_2.png?ref_type=heads)
 
 3. Sprint 3
+
 ![image_alt](https://cseegit.essex.ac.uk/25-26-ce201-col/25-26_CE201-col_team05/-/raw/master/MVP/Burndown_Chart_sprint_3.png?ref_type=heads)
 
 
