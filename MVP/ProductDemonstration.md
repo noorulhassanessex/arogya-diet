@@ -41,4 +41,4 @@ Narrative:
 _**4. About Page (Section 2)**_
 ![image_alt](https://cseegit.essex.ac.uk/25-26-ce201-col/25-26_CE201-col_team05/-/raw/master/MVP/Mission_of_Arogya_Diet.jpeg?ref_type=heads)
 
-The above (Section 2) extends the About Section 1 in it and explains about the mission of the Arogya. It tells about what arogya can do and how the users are benefits from this Arogya Diet Management Tool.
+The above (Section 2) extends the About Section 1 in it and explains about the mission of the Arogya. It tells about what arogya can do and how the users are benefits from this Arogya Diet Management Tool. It not only outlines the functionality of what Arogya aims to achieve, but also the unqiue features which includes tracking the calories and nutrients, planning the meal, understand healthy food choices, main the diet goals and progress tracking to it. These features helps the user to a healthy behaviour from our really helpful Arogya Diet Manangement website.
