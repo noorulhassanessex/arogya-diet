@@ -1,6 +1,6 @@
 ## Product Management Log
  
-# Project Management Discussion
+# Project management discussion
 The team has worked really well with all the members agreeing to the effective communication between each other within the group. The project is progressing extremely good and is on track. The work load has been high for some people as some of the team members didn't contributed that good, yet the team discussions didn't stopped and we did reached our goals.
 
 Our weekly lab meetings have really been useful atleast for us who were always consistently present there in the labs all time and the one's who were not struggle did struggled to do out the project. These sessions allowed us to stay organised and progress steadily and very smoothly together. Holding the short meetings after the lab sessions and staying in consistent contacts over the social media helped us to keep everything on time.
