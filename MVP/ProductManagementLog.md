@@ -35,7 +35,7 @@ These are some of the unique features that's going to be present there in our fi
 
 ## Other areas 
 ### 1. Weekly Calorie Trend Chart
-![Weekly Calorie Trend]( weekly_calorie_trend.png))
+![Weekly Calorie Trend]( weekly_calorie_trend.png)
 
 This chart demonstrates the user’s calorie intake across a seven-day period.  
 At the MVP stage, the chart uses sample data to demonstrate functionality.  
