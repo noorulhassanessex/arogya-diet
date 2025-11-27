@@ -8,7 +8,7 @@ _**1. Home Page**_
 
 ![image_alt](https://cseegit.essex.ac.uk/25-26-ce201-col/25-26_CE201-col_team05/-/raw/master/MVP/WhatsApp_Image_2025-11-22_at_14.33.56_8407c90a.jpg?ref_type=heads)
 
-when the Arogya Diet Management tool is launched this Home Page is presented of the Arogya Diet Management, web-based diet tracker. It's home page displaying the name of the website, Arogya Diet and the main navigation bars of the website with the introductory line to it for the users to understand it:
+when the Arogya Diet Management toolis launched this Home Page is presented of the Arogya Diet Management, web-based diet tracker. It's home page displaying the name of the website, Arogya Diet and the main navigation bars of the website with the introductory line to it for the users to understand it:
 
 1-Home 
 
