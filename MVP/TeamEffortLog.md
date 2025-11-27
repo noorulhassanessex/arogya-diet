@@ -12,6 +12,13 @@ Assigned responsibilities within the group and made sure that open lines of comm
 
 Time Spent: 3 hours
 
+Project Documentation & Briefing:
+
+Created the first project brief and used Tuleap to arrange all of the tasks. made certain that everyone on the team understood the project's scope and schedule.
+
+Time Spent: 3 hours
+
+
 Tuleap Setup:
 
 For the diet management tool project, I created and arranged tasks in Tuleap. made ensuring that team access and work classification were done correctly.
@@ -136,12 +143,6 @@ https://csee-tuleap.essex.ac.uk/plugins/tracker/?aid=10010
 **Sprint 1 (University Week 3):**
 
 Main Contributions:
-
-Project Documentation & Briefing:
-
-Created the first project brief and used Tuleap to arrange all of the tasks. made certain that everyone on the team understood the project's scope and schedule.
-
-Time Spent: 3 hours
 
 Research on Nutritional Metrics:
 
