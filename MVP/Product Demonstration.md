@@ -8,7 +8,7 @@ _**1. Home Page**_
 
 ![image_alt](https://cseegit.essex.ac.uk/25-26-ce201-col/25-26_CE201-col_team05/-/raw/master/MVP/WhatsApp_Image_2025-11-22_at_14.33.56_8407c90a.jpg?ref_type=heads)
 
-when the Arogya Diet Management toolis launched this Home Page is presented of the Arogya Diet Management, web-based diet tracker. It's home page displaying the name of the website, Arogya Diet and the main navigation bars of the website with the introductory line to it for the users to understand it:
+when the Arogya Diet Management tool is launched this Home Page is presented of the Arogya Diet Management, web-based diet tracker. It's home page displaying the name of the website, Arogya Diet and the main navigation bars of the website with the introductory line to it for the users to understand it:
 
 1-Home 
 
@@ -26,8 +26,7 @@ This page above allows the user to add their daily meals which includes the meal
 Narrative:
 “The ‘Track Diet’ page lets users log what they eat. Users select a meal type, enter the food name, and specify the quantity in grams. Pressing ‘Add Meal’ will store this information.”
 
-Incomplete feature:
-•	“In the MVP, the form records values but does not yet display a full summary graph. The final version will compute calories and update dynamic charts.
+The final version will compute calories and update dynamic charts.
 
 _**3. Meal Plan Page**_
 
@@ -37,11 +36,6 @@ Narrative:
 “Clicking on ‘Meal Plan’ takes the user to the Meal Plan page. This section will display personalized meal plans. In the MVP version, a static placeholder card is shown, demonstrating the UI where dynamically generated meals will later appear.” 
 Narrative:
 “The ‘About’ page provides background information about Arogya. It explains the mission of the project, key features, and the reasons behind building this tool as part of a university assignment.”
-
-
-Incomplete feature:
-•	“The meal plan generation feature is not yet fully implemented.
-•	The current content is static and will be replaced with data-driven output in the final version. 
 
 
 _**4. About Page (Section 2)**_
