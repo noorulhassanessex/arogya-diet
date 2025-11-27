@@ -6,6 +6,11 @@
 
 Main Contributions:
 
+Team Organization and Communication Setup:
+
+Assigned responsibilities within the group and made sure that open lines of communication were created. To facilitate team coordination, a WhatsApp group was established.
+
+Time Spent: 3 hours
 Tuleap Setup:
 
 For the diet management tool project, I created and arranged tasks in Tuleap. made ensuring that team access and work classification were done correctly.
@@ -70,12 +75,6 @@ https://csee-tuleap.essex.ac.uk/plugins/tracker/?aid=10008
 **Sprint 1 (University Week 3):**
 
 Main Contributions:
-
-Team Organization and Communication Setup:
-
-Assigned responsibilities within the group and made sure that open lines of communication were created. To facilitate team coordination, a WhatsApp group was established.
-
-Time Spent: 3 hours
 
 Initial Research on Dietary Goals:
 
