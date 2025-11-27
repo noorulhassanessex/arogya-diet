@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Your Goals</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<header>
+    <h1>Diet Goals</h1>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/tracker">Track Diet</a>
+        <a href="/meal-plan">Meal Plan</a>
+        <a href="/analytics">Analytics</a>
+        <a class="active" href="/goals">Goals</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>Your Daily Goals</h2>
+
+    <ul style="text-align:left; margin:auto; width: 60%;">
+        <li><strong>Calories:</strong> 2000 kcal</li>
+        <li><strong>Protein:</strong> 100g</li>
+        <li><strong>Carbs:</strong> 250g</li>
+        <li><strong>Fat:</strong> 70g</li>
+    </ul>
+
+</section>
+
+</body>
+</html>

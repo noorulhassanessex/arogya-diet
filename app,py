@@ -22,18 +22,29 @@ def tracker():
 
     return render_template('tracker.html')
 
-
 # ----- Meal Plan Page -----
 @app.route('/meal-plan')
 def meal_plan():
     return render_template('meal_plan.html')
 
-
 # ----- About Page -----
 @app.route('/about')
 def about():
     return render_template('about.html')
+    
+
+# ----- Analytics Page -----
+@app.route('/analytics')
+def analytics():
+    return render_template("analytics.html")
+
+# ----- Goals Page -----
+@app.route('/goals')
+def goals():
+    return render_template("goals.html")
 
 
+# ----- Run Flask App -----
 if __name__ == '__main__':
     app.run(debug=True)
+
