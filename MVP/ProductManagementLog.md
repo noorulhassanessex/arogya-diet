@@ -50,32 +50,3 @@ We also plan to extend the date range options so that users can view daily, week
 The image above shows the Python script used to generate the weekly calorie trend chart.  
 The script uses the `matplotlib` library to plot daily calorie values and save the chart as a PNG file.
 
-Below is the exact code used for generating the graph:
-
-```python
-import matplotlib.pyplot as plt
-
-# Sample data for nutrient trend (calories per day)
-days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
-calories = [1400, 1500, 1600, 1550, 1700, 1650, 1580]
-
-# Create the chart
-plt.figure(figsize=(8, 4))
-plt.plot(days, calories, marker='o')
-
-# Add titles and labels
-plt.title("Weekly Calorie Trend")
-plt.xlabel("Day")
-plt.ylabel("Calories")
-
-# Add a grid for readability
-plt.grid(True)
-
-# Adjust layout
-plt.tight_layout()
-
-# Save the chart
-plt.savefig("python_line_chart.png")
-
-# Close the figure
-plt.close()
