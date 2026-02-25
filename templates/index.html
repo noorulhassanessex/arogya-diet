@@ -26,12 +26,13 @@
     <a href="/tracker" class="btn">Start Tracking</a>
 </section>
 
-<!-- 🔐 SIGN IN SECTION (ADDED) -->
+
+<!--SIGN IN SECTION -->
 <section class="login-section">
     <div class="login-container">
         <h2>Sign In</h2>
 
-        <form action="/tracker" method="POST"></form>
+        <form action="/login" method="POST">
             <div class="input-group">
                 <label>Email</label>
                 <input type="email" name="email" placeholder="Enter your email" required>
@@ -45,7 +46,7 @@
             <button type="submit" class="btn login-btn">Login</button>
 
             <p class="extra">
-                Don’t have an account? <a href="/register">Sign up</a>
+                Don’t have an account? <a href="/signup">Sign up</a>
             </p>
         </form>
     </div>
