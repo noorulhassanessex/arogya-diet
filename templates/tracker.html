@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Track Diet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f4f7fb; color: #333; }
+
+        header { background: #2c7be5; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; }
+        header h1 { color: #fff; margin: 0; font-size: 22px; }
+        nav a { color: #fff; margin-left: 20px; text-decoration: none; font-weight: 500; }
+        nav a:hover { text-decoration: underline; }
+
+        .wrapper { max-width: 900px; margin: 40px auto; display: grid; grid-template-columns: 1fr 1fr; gap: 30px; padding: 0 20px; }
+
+        .card { background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+        .card h2 { margin-top: 0; margin-bottom: 10px; font-size: 20px; }
+        .card p { color: #666; margin-bottom: 20px; }
+
+        label { font-weight: 600; display: block; margin-bottom: 5px; }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        button { width: 100%; padding: 12px; background: #2c7be5; border: none; color: white; font-size: 15px; font-weight: bold; border-radius: 6px; cursor: pointer; }
+        button:hover { background: #1a68d1; }
+
+        .water-btn { background: #28a745; }
+        .water-btn:hover { background: #1f8c38; }
+
+        .danger-btn { background: #dc3545; }
+        .danger-btn:hover { background: #b52a37; }
+
+        .full { grid-column: span 2; }
+
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { padding: 10px; border-bottom: 1px solid #eee; text-align: left; font-size: 14px; }
+
+        @media (max-width: 768px) {
+            .wrapper { grid-template-columns: 1fr; }
+            .full { grid-column: span 1; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Arogya Diet</h1>
+    <nav>
+        <a href="/tracker">Track Diet</a>
+        <a href="/report">Report</a>
+        <a href="/meal-plan">Meal Plan</a>
+        <a href="/bmi">BMI Check</a>
+        <a href="/about">About</a>
+        <a href="/logout">Logout</a>
+    </nav>
+</header>
+
+<div class="wrapper">
+
+    <!-- ADD MEAL / FOOD -->
+    <div class="card">
+        <h2>Add Meal</h2>
+        <p>Log what you ate and track calories + macros</p>
+
+        <form action="{{ url_for('tracker') }}" method="POST">
+            <input type="hidden" name="action" value="add_food">
+
+            <label>Meal Type</label>
+            <select name="meal_type" required>
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="snack">Snack</option>
+                <option value="dinner">Dinner</option>
+            </select>
+
+            <label>Food Item</label>
+            <select name="food_item_id" required>
+                {% for f in foods %}
+                    <option value="{{ f['id'] }}">{{ f['name'] }}</option>
+                {% endfor %}
+            </select>
+
+            <label>Quantity (servings)</label>
+            <input type="number" name="quantity" step="0.25" min="0.25" value="1" required>
+
+            <button type="submit">Add Meal</button>
+        </form>
+    </div>
+
+    <!-- ADD WATER -->
+    <div class="card">
+        <h2>Water Intake</h2>
+        <p>Track your daily hydration</p>
+
+        <form action="{{ url_for('tracker') }}" method="POST">
+            <input type="hidden" name="action" value="add_water">
+
+            <label>Glasses of Water</label>
+            <input type="number" name="glasses" placeholder="e.g. 8" min="1" max="30" required>
+
+            <button type="submit" class="water-btn">Add Water</button>
+        </form>
+
+        <p><b>Total Today:</b> {{ water_total }} glasses</p>
+    </div>
+
+    <!-- SUMMARY / HISTORY -->
+    <div class="card full">
+        <h2>Today Summary ({{ today }})</h2>
+        <p>
+            <b>Calories:</b> {{ totals['calories'] }} |
+            <b>Protein:</b> {{ totals['protein'] }}g |
+            <b>Carbs:</b> {{ totals['carbs'] }}g |
+            <b>Fat:</b> {{ totals['fat'] }}g |
+            <b>Sugar:</b> {{ totals['sugar'] }}g
+        </p>
+
+        <h3>Meals Logged Today</h3>
+        {% if today_food %}
+            <table>
+                <tr><th>Meal</th><th>Item</th><th>Qty</th><th>Calories</th><th>Action</th></tr>
+                {% for r in today_food %}
+                <tr>
+                    <td>{{ r['meal_type'] }}</td>
+                    <td>{{ r['name'] }}</td>
+                    <td>{{ r['quantity'] }}</td>
+                    <td>{{ r['calories'] }}</td>
+                    <td>
+                        <form action="{{ url_for('tracker') }}" method="POST">
+                            <input type="hidden" name="action" value="delete_food">
+                            <input type="hidden" name="log_id" value="{{ r['id'] }}">
+                            <button class="danger-btn" type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>No meals logged today.</p>
+        {% endif %}
+
+        <h3 style="margin-top:18px;">Water Entries Today</h3>
+        {% if water_rows %}
+            <table>
+                <tr><th>Glasses</th><th>Date</th><th>Action</th></tr>
+                {% for w in water_rows %}
+                <tr>
+                    <td>{{ w['glasses'] }}</td>
+                    <td>{{ w['log_date'] }}</td>
+                    <td>
+                        <form action="{{ url_for('tracker') }}" method="POST">
+                            <input type="hidden" name="action" value="delete_water">
+                            <input type="hidden" name="water_id" value="{{ w['id'] }}">
+                            <button class="danger-btn" type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>No water logged today.</p>
+        {% endif %}
+    </div>
+
+</div>
+
+</body>
+</html>

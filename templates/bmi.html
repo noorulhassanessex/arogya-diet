@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>Arogya Diet</h1>
+    <nav>
+        <a href="/tracker">Track Diet</a>
+        <a href="/report">Report</a>
+        <a href="/meal-plan">Meal Plan</a>
+        <a href="/bmi">BMI Check</a>
+        <a href="/about">About</a>
+        <a href="/logout">Logout</a>
+    </nav>
+</header>
+
+<div class="container">
+    <h1>BMI Calculator</h1>
+
+    <form method="POST" class="card">
+        <label>Weight (kg)</label>
+        <input type="number" name="weight" step="0.1" required>
+
+        <label>Height (cm)</label>
+        <input type="number" name="height" step="0.1" required>
+
+        <button type="submit">Calculate BMI</button>
+    </form>
+
+    {% if bmi is not none %}
+        <div class="card">
+            <h2>Your BMI: {{ bmi }}</h2>
+            <p>Category: {{ category }}</p>
+
+            {% if suggested_plans %}
+                <h3>Recommended Meal Plans</h3>
+                {% for plan in suggested_plans %}
+                    <form action="{{ url_for('meal_plan') }}" method="GET">
+                        <input type="hidden" name="name" value="{{ plan }}">
+                        <button type="submit">{{ plan }}</button>
+                    </form>
+                {% endfor %}
+            {% endif %}
+        </div>
+    {% endif %}
+</div>
+
+</body>
+</html>

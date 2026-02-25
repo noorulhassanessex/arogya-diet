@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Track Diet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header>
+  <h1>Arogya Diet</h1>
+  <nav>
+    <a href="/tracker">Track Diet</a>
+    <a href="/report">Report</a>
+    <a href="/meal-plan">Meal Plan</a>
+    <a href="/bmi">BMI Check</a>
+    <a href="/about">About</a>
+    <a href="/logout">Logout</a>
+  </nav>
+</header>
+
+<div class="container">
+  <h2>Welcome: {{ email }}</h2>
+  <p>Today: <b>{{ today }}</b></p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Add Food</h3>
+      <form method="POST" action="{{ url_for('tracker') }}">
+        <input type="hidden" name="action" value="add_food">
+
+        <label>Meal Type</label>
+        <select name="meal_type" required>
+          <option value="breakfast">Breakfast</option>
+          <option value="lunch">Lunch</option>
+          <option value="snack">Snack</option>
+          <option value="dinner">Dinner</option>
+        </select>
+
+        <label>Food Item</label>
+        <select name="food_item_id" required>
+          {% for f in foods %}
+            <option value="{{ f['id'] }}">{{ f['name'] }}</option>
+          {% endfor %}
+        </select>
+
+        <label>Quantity (servings)</label>
+        <input type="number" name="quantity" step="0.25" min="0.25" value="1" required>
+
+        <button type="submit">Add Food</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h3>Add Water</h3>
+      <form method="POST" action="{{ url_for('tracker') }}">
+        <input type="hidden" name="action" value="add_water">
+
+        <label>Glasses</label>
+        <input type="number" name="glasses" min="1" max="30" required>
+
+        <button type="submit" class="green">Add Water</button>
+      </form>
+
+      <p style="margin-top:10px;"><b>Total water today:</b> {{ water_total }} glasses</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Today’s Nutrition Totals</h3>
+    <p><b>Calories:</b> {{ totals['calories'] }}</p>
+    <p><b>Protein:</b> {{ totals['protein'] }} g</p>
+    <p><b>Carbs:</b> {{ totals['carbs'] }} g</p>
+    <p><b>Fat:</b> {{ totals['fat'] }} g</p>
+    <p><b>Sugar:</b> {{ totals['sugar'] }} g</p>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Food History (Today)</h3>
+      {% if today_food %}
+        <table class="table">
+          <tr><th>Meal</th><th>Item</th><th>Qty</th><th>Cal</th><th></th></tr>
+          {% for r in today_food %}
+            <tr>
+              <td>{{ r['meal_type'] }}</td>
+              <td>{{ r['name'] }}</td>
+              <td>{{ r['quantity'] }}</td>
+              <td>{{ r['calories'] }}</td>
+              <td>
+                <form method="POST" action="{{ url_for('tracker') }}">
+                  <input type="hidden" name="action" value="delete_food">
+                  <input type="hidden" name="log_id" value="{{ r['id'] }}">
+                  <button type="submit" class="danger">Delete</button>
+                </form>
+              </td>
+            </tr>
+          {% endfor %}
+        </table>
+      {% else %}
+        <p>No food logged today.</p>
+      {% endif %}
+    </div>
+
+    <div class="card">
+      <h3>Water Entries (Today)</h3>
+      {% if water_rows %}
+        <table class="table">
+          <tr><th>Glasses</th><th>Date</th><th></th></tr>
+          {% for w in water_rows %}
+            <tr>
+              <td>{{ w['glasses'] }}</td>
+              <td>{{ w['log_date'] }}</td>
+              <td>
+                <form method="POST" action="{{ url_for('tracker') }}">
+                  <input type="hidden" name="action" value="delete_water">
+                  <input type="hidden" name="water_id" value="{{ w['id'] }}">
+                  <button type="submit" class="danger">Delete</button>
+                </form>
+              </td>
+            </tr>
+          {% endfor %}
+        </table>
+      {% else %}
+        <p>No water entries today.</p>
+      {% endif %}
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
