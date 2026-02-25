@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arogya Analytics</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<header>
+    <h1>Arogya Analytics</h1>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/tracker">Track Diet</a>
+        <a href="/meal-plan">Meal Plan</a>
+        <a class="active" href="/analytics">Analytics</a>
+        <a href="/goals">Goals</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>Daily Calorie Intake</h2>
+
+    <!-- Warning Banner -->
+    <div style="background: #ffcc00; padding: 15px; border-radius: 10px; margin-bottom: 20px;">
+        ⚠ Warning: You may exceed today’s calorie goal.
+    </div>
+
+    <!-- Chart Canvas -->
+    <canvas id="calorieChart" width="400" height="200"></canvas>
+
+</section>
+
+<!-- Chart JS -->
+<script>
+const ctx = document.getElementById('calorieChart');
+new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ["Breakfast", "Lunch", "Snacks", "Dinner"],
+        datasets: [{
+            label: "Calories",
+            data: [350, 600, 200, 500],  // placeholder
+            borderColor: "rgb(138, 43, 226)",
+            backgroundColor: "rgba(138, 43, 226, 0.2)",
+            borderWidth: 2,
+            tension: 0.4
+        }]
+    }
+});
+</script>
+
+</body>
+</html>

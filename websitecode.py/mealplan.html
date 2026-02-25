@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Meal Plan</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>Arogya Diet</h1>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/tracker">Track Diet</a>
+        <a href="/meal-plan">Meal Plan</a>
+        <a href="/bmi">BMI Check</a>
+        <a href="/about">About</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Your Personal Meal Plan</h1>
+    <p>Based on your BMI results</p>
+</section>
+
+<section class="meal-plan-display">
+    {% if name and items %}
+        <h2>{{ name }}</h2>
+        <ul>
+            {% for item in items %}
+                <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Please calculate your BMI to receive a recommended meal plan.</p>
+        <a href="/bmi">
+            <button>Go to BMI Calculator</button>
+        </a>
+    {% endif %}
+</section>
+
+</body>
+</html>
