@@ -6,16 +6,24 @@
     font-family: 'Poppins', Arial, sans-serif;
 }
 
+/* PAGE BACKGROUND (keep your theme) */
 body {
-    background: #f7f9fc;
-    color: #333;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+
+    background: url("../images/bg3.webp") no-repeat center center fixed;
+    background-size: cover;
+
+    /* best readable default text on image */
+    color: #2b2b3c;
 }
 
 /* HEADER */
 header {
-    background: linear-gradient(90deg, #ff4b91, #8349ff, #4facfe);
+    background: linear-gradient(90deg, #ff4b90fd, #8349ff, #4facfe);
     padding: 20px;
-    color: white;
+    color: #ffffff;
     text-align: center;
     font-size: 2rem;
     font-weight: 700;
@@ -27,7 +35,7 @@ nav {
 }
 
 nav a {
-    color: white;
+    color: #ffffff;
     margin: 0 15px;
     text-decoration: none;
     font-weight: 500;
@@ -35,7 +43,8 @@ nav a {
 }
 
 nav a:hover {
-    text-shadow: 0px 0px 8px white;
+    color: #fff;
+    text-shadow: 0 0 12px rgba(255,255,255,0.9);
 }
 
 /* HERO SECTION */
@@ -43,23 +52,29 @@ nav a:hover {
     max-width: 700px;
     margin: 50px auto;
     text-align: center;
-    background: white;
+
+    /* slightly transparent so background still shows */
+    background: rgba(255, 255, 255, 0.88);
     padding: 40px;
     border-radius: 18px;
-    box-shadow: 0px 8px 25px rgba(0,0,0,0.1);
+    box-shadow: 0px 8px 25px rgba(0,0,0,0.12);
+
+    /* blur looks great on image backgrounds (optional but nice) */
+    backdrop-filter: blur(6px);
 }
 
 .hero h1 {
     font-size: 2.4rem;
-    color: #333;
+    color: #1e1e2f;   /* deep charcoal */
 }
 
 .hero p {
     margin: 15px 0;
     font-size: 1.2rem;
-    color: #555;
+    color: #4a4a6a;   /* soft dark purple-grey */
 }
 
+/* BUTTONS */
 .btn {
     display: inline-block;
     margin-top: 20px;
@@ -81,21 +96,24 @@ nav a:hover {
 /* TRACKER FORM */
 .form-container {
     max-width: 500px;
-    background: white;
+
+    /* keep clean on image background */
+    background: rgba(255, 255, 255, 0.92);
     margin: 40px auto;
     padding: 30px;
     border-radius: 18px;
-    box-shadow: 0px 8px 25px rgba(0,0,0,0.1);
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(6px);
 }
 
 .form-container h2 {
     margin-bottom: 20px;
-    color: #444;
+    color: #1e1e2f;
 }
 
 label {
-    font-weight: 500;
-    color: #444;
+    font-weight: 600;
+    color: #44446a;  /* readable + matches theme */
 }
 
 input, select {
@@ -105,12 +123,14 @@ input, select {
     border: 2px solid #d1d1d1;
     border-radius: 10px;
     transition: 0.3s;
+    background: #ffffff;
+    color: #2b2b3c;
 }
 
 input:focus, select:focus {
     border-color: #8349ff;
     outline: none;
-    box-shadow: 0px 0px 8px rgba(131, 73, 255, 0.4);
+    box-shadow: 0px 0px 8px rgba(131, 73, 255, 0.35);
 }
 
 .submit-btn {
@@ -128,27 +148,32 @@ input:focus, select:focus {
 .submit-btn:hover {
     box-shadow: 0px 0px 15px rgba(79,172,254,0.6);
     transform: translateY(-2px);
-} 
+}
 
+/* LOGIN SECTION */
 .login-section {
     display: flex;
     justify-content: center;
     padding: 60px 20px;
-    background: #f7f7f7;
+
+    /* transparent so image shows behind */
+    background: transparent;
 }
 
 .login-container {
-    background: #fff;
+    background: rgba(255, 255, 255, 0.92);
     padding: 30px;
     width: 320px;
     border-radius: 12px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.15);
     animation: fadeIn 500ms ease;
+    backdrop-filter: blur(6px);
 }
 
 .login-container h2 {
     text-align: center;
     margin-bottom: 20px;
+    color: #2d2d44;
 }
 
 .input-group {
@@ -157,7 +182,7 @@ input:focus, select:focus {
 
 .input-group label {
     font-size: 14px;
-    color: #444;
+    color: #44446a;
 }
 
 .input-group input {
@@ -170,7 +195,8 @@ input:focus, select:focus {
 
 .input-group input:focus {
     outline: none;
-    border-color: #4CAF50;
+    border-color: #8349ff;
+    box-shadow: 0 0 8px rgba(131, 73, 255, 0.25);
 }
 
 .login-btn {
@@ -182,6 +208,7 @@ input:focus, select:focus {
     text-align: center;
     margin-top: 15px;
     font-size: 14px;
+    color: #4a4a6a;
 }
 
 .extra a {
@@ -189,6 +216,18 @@ input:focus, select:focus {
     text-decoration: none;
 }
 
+.extra a:hover {
+    text-decoration: underline;
+}
+
+/* FOOTER (if you have one) */
+footer {
+    text-align: center;
+    padding: 18px 10px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* ANIMATION */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -199,5 +238,3 @@ input:focus, select:focus {
         transform: translateY(0);
     }
 }
-
- 
