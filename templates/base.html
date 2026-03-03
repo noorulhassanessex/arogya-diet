@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}Arogya Diet{% endblock %}</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <div class="brand-mark">A</div>
+      <div class="brand-text">
+        <div class="brand-name">Arogya</div>
+        <div class="brand-sub">Diet & Fitness</div>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a href="/" class="{% if request.path=='/' %}active{% endif %}">Home</a>
+      <a href="/tracker" class="{% if request.path.startswith('/tracker') %}active{% endif %}">Tracker</a>
+      <a href="/bmi" class="{% if request.path.startswith('/bmi') %}active{% endif %}">BMI</a>
+      <a href="/meal-plan" class="{% if request.path.startswith('/meal-plan') %}active{% endif %}">Meal Plan</a>
+      <a href="/report" class="{% if request.path.startswith('/report') %}active{% endif %}">Reports</a>
+      <a href="/about" class="{% if request.path.startswith('/about') %}active{% endif %}">About</a>
+
+      {% if session.get('user_id') %}
+        <a href="/logout" class="nav-ghost">Logout</a>
+      {% else %}
+        <a href="/login" class="nav-ghost">Login</a>
+      {% endif %}
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <div class="page-inner">
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="alert">{{ messages[0] }}</div>
+      {% endif %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="page-inner">
+    <div>© 2025 Arogya</div>
+    <div class="footer-mini">Eat better • Move more • Feel great</div>
+  </div>
+</footer>
+
+</body>
+</html>

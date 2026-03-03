@@ -1,60 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Arogya Diet Management Tool | Sign In</title>
-
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arogya | Diet & Fitness</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
-<body>
 
-<header>
-    <h1>Arogya Diet</h1>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/tracker">Track Diet</a>
-        <a href="/meal-plan">Meal Plan</a>
-        <a href="/about">About</a>
+<body class="home-bg">
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <div class="brand-mark">A</div>
+      <div>
+        <div class="brand-name">Arogya</div>
+        <div class="brand-sub">Diet & Fitness</div>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a href="/" class="active">Home</a>
+      <a href="/tracker">Tracker</a>
+      <a href="/bmi">BMI</a>
+      <a href="/meal_plan">Meal Plan</a>
+      <a href="/report">Reports</a>
+      <a href="/about">About</a>
+      <a href="/login" class="nav-ghost">Login</a>
     </nav>
+  </div>
 </header>
 
-<section class="hero">
-    <h1>Eat Healthy. Stay Fit.</h1>
-    <p>Track your meals, calories, and design the perfect diet plan for your fitness goals.</p>
-    <a href="/tracker" class="btn">Start Tracking</a>
-</section>
+<main class="page">
+  <div class="page-inner">
 
+    <div class="index-grid">
 
-<!--SIGN IN SECTION -->
-<section class="login-section">
-    <div class="login-container">
-        <h2>Sign In</h2>
+      <!-- ✅ TABLE 1: HERO (VISIBLE) -->
+      <section class="index-table">
+        <h1 class="index-h1">Eat Healthy. Stay Fit.</h1>
+        <p class="index-p">
+          Track meals, calories & hydration — and get personalised meal + workout plans based on your goals.
+        </p>
 
-        <form action="/login" method="POST">
-            <div class="input-group">
-                <label>Email</label>
-                <input type="email" name="email" placeholder="Enter your email" required>
-            </div>
+        <div class="index-actions">
+          <a class="btn btn-primary" href="/tracker">Start Tracking</a>
+          <a class="btn btn-ghost" href="/bmi">Check BMI</a>
+        </div>
 
-            <div class="input-group">
-                <label>Password</label>
-                <input type="password" name="password" placeholder="Enter your password" required>
-            </div>
+        <div class="index-tags">
+          <span class="tag">🍽 Meal Tracking</span>
+          <span class="tag">💧 Water Goals</span>
+          <span class="tag">📊 Weekly Reports</span>
+          <span class="tag">🏋 Workout Plans</span>
+        </div>
+      </section>
 
-            <button type="submit" class="btn login-btn">Login</button>
+      <!-- ✅ TABLE 2: LOGIN (VISIBLE) -->
+      <section class="index-table">
+        <h2 class="index-h2">Sign In</h2>
+        <p class="muted">Log in to continue tracking your progress.</p>
 
-            <p class="extra">
-                Don’t have an account? <a href="/signup">Sign up</a>
-            </p>
+        <form method="POST" action="/login" class="index-form">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="Enter your email" required>
+
+          <label>Password</label>
+          <input type="password" name="password" placeholder="Enter your password" required>
+
+          <button class="btn btn-primary" type="submit" style="width:100%; margin-top:12px;">
+            Login
+          </button>
         </form>
-    </div>
-</section>
 
-<footer>
-    <p>© 2025 Arogya</p>
-</footer>
+        <p class="index-small">
+          Don’t have an account? <a href="/signup">Sign up</a>
+        </p>
+      </section>
+
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">© 2025 Arogya</footer>
 
 </body>
 </html>

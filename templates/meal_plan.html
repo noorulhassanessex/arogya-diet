@@ -1,43 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Meal Plan</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meal Plan | Arogya</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
 
-<header>
-    <h1>Arogya Diet</h1>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/tracker">Track Diet</a>
-        <a href="/meal-plan">Meal Plan</a>
-        <a href="/bmi">BMI Check</a>
-        <a href="/about">About</a>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <div class="brand-mark">A</div>
+      <div>
+        <div class="brand-name">Arogya</div>
+        <div class="brand-sub">Diet & Fitness</div>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a href="/">Home</a>
+      <a href="/tracker">Tracker</a>
+      <a href="/bmi">BMI</a>
+      <a href="/meal_plan" class="active">Meal Plan</a>
+      <a href="/about">About</a>
     </nav>
+  </div>
 </header>
 
-<section class="hero">
-    <h1>Your Personal Meal Plan</h1>
-    <p>Based on your BMI results</p>
-</section>
+<main class="page">
+  <div class="page-inner">
 
-<section class="meal-plan-display">
+    <div class="card hero meal-hero">
+      <h1 class="hero-title">Your Personal Meal Plan</h1>
+      <p class="muted">Based on your BMI results</p>
+    </div>
+
+    <div style="height:14px;"></div>
+
     {% if name and items %}
-        <h2>{{ name }}</h2>
-        <ul>
-            {% for item in items %}
-                <li>{{ item }}</li>
-            {% endfor %}
-        </ul>
+
+      <!-- ✅ THIS makes it wide: 2 columns (left big, right small) -->
+      <div class="meal-grid">
+
+        <!-- LEFT: PLAN (WIDE) -->
+        <div class="card">
+          <div class="plan-top">
+            <div>
+              <h2 class="plan-title">{{ name }}</h2>
+              <p class="muted" style="margin-top:6px;">Choose ONE option per meal</p>
+            </div>
+            <div class="plan-badge">Personal Plan</div>
+          </div>
+
+          <!-- Breakfast -->
+          <div class="meal-block">
+            <h3>🍳 Breakfast</h3>
+            <div class="meal-options">
+              <div class="option">Oats + Fruits</div>
+              <div class="option">Boiled Eggs + Toast</div>
+              <div class="option">Greek Yogurt + Nuts</div>
+            </div>
+          </div>
+
+          <!-- Lunch -->
+          <div class="meal-block">
+            <h3>🥗 Lunch</h3>
+            <div class="meal-options">
+              <div class="option">Chicken + Rice + Vegetables</div>
+              <div class="option">Grilled Fish + Salad</div>
+              <div class="option">Lentils + Brown Rice</div>
+            </div>
+          </div>
+
+          <!-- Dinner -->
+          <div class="meal-block">
+            <h3>🍲 Dinner</h3>
+            <div class="meal-options">
+              <div class="option">Vegetable Soup</div>
+              <div class="option">Salmon + Spinach</div>
+              <div class="option">Chicken Salad</div>
+            </div>
+          </div>
+
+          <div class="tip-box">
+            <b>Tips to get results:</b>
+            <ul>
+              <li>Drink 6–10 glasses of water daily 💧</li>
+              <li>Walk 20–30 minutes daily 🚶</li>
+              <li>Stay consistent 2–3 weeks ✅</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- RIGHT: WORKOUT -->
+        <div>
+          <div class="card">
+            <h3>Workout Recommendation</h3>
+            <p class="muted" style="margin-top:6px;">Recommended according to your plan goal</p>
+
+            {% if "Loss" in name or "Low-Carb" in name or "Keto" in name %}
+              <div class="workout-box">
+                <b>Fat Loss Routine</b>
+                <ul>
+                  <li>Cardio: 30–40 mins (walk/cycle) 4–5 days</li>
+                  <li>Strength: 2 days (full body light)</li>
+                  <li>Steps: 7k–10k daily</li>
+                </ul>
+              </div>
+            {% elif "Gain" in name or "Muscle" in name or "High-Protein" in name %}
+              <div class="workout-box">
+                <b>Muscle Gain Routine</b>
+                <ul>
+                  <li>Strength: 3–4 days (push/pull/legs)</li>
+                  <li>Core: 2–3x/week</li>
+                  <li>Rest: 7–8 hours sleep</li>
+                </ul>
+              </div>
+            {% else %}
+              <div class="workout-box">
+                <b>Balanced Routine</b>
+                <ul>
+                  <li>2 days strength training</li>
+                  <li>2 days cardio 20–30 mins</li>
+                  <li>1 day mobility + stretching</li>
+                </ul>
+              </div>
+            {% endif %}
+
+            <a class="btn btn-ghost" href="/bmi" style="width:100%; margin-top:12px;">
+              Calculate BMI Again
+            </a>
+          </div>
+
+          <div style="height:14px;"></div>
+
+          <div class="card">
+            <h3>Try Another Plan</h3>
+            <p class="muted" style="margin-top:6px;">
+              Choose a different plan by recalculating BMI.
+            </p>
+            <a class="btn btn-primary" href="/bmi" style="width:100%; margin-top:10px;">
+              Go to BMI
+            </a>
+          </div>
+        </div>
+
+      </div>
+
     {% else %}
-        <p>Please calculate your BMI to receive a recommended meal plan.</p>
-        <a href="/bmi">
-            <button>Go to BMI Calculator</button>
-        </a>
+      <div class="card" style="text-align:center;">
+        <h2>No plan selected</h2>
+        <p class="muted" style="margin-top:8px;">
+          Calculate your BMI first to get your personalised meal plan.
+        </p>
+        <a class="btn btn-primary" href="/bmi" style="margin-top:12px;">Go to BMI Calculator</a>
+      </div>
     {% endif %}
-</section>
+
+  </div>
+</main>
 
 </body>
 </html>

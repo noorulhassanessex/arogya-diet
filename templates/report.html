@@ -1,133 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Track Diet</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weekly Report | Arogya</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
 
-<header>
-  <h1>Arogya Diet</h1>
-  <nav>
-    <a href="/tracker">Track Diet</a>
-    <a href="/report">Report</a>
-    <a href="/meal-plan">Meal Plan</a>
-    <a href="/bmi">BMI Check</a>
-    <a href="/about">About</a>
-    <a href="/logout">Logout</a>
-  </nav>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <div class="brand-mark">A</div>
+      <div>
+        <div class="brand-name">Arogya</div>
+        <div class="brand-sub">Diet & Fitness</div>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a href="/">Home</a>
+      <a href="/tracker">Tracker</a>
+      <a href="/bmi">BMI</a>
+      <a href="/meal_plan">Meal Plan</a>
+      <a href="/report" class="active">Reports</a>
+      <a href="/about">About</a>
+    </nav>
+  </div>
 </header>
 
-<div class="container">
-  <h2>Welcome: {{ email }}</h2>
-  <p>Today: <b>{{ today }}</b></p>
+<main class="page">
+  <div class="page-inner">
 
-  <div class="grid">
-    <div class="card">
-      <h3>Add Food</h3>
-      <form method="POST" action="{{ url_for('tracker') }}">
-        <input type="hidden" name="action" value="add_food">
+    <div class="card hero">
+      <h1 class="hero-title">Weekly Report</h1>
+      <p class="muted">Meals + Water + Graph (Last 7 days by default)</p>
 
-        <label>Meal Type</label>
-        <select name="meal_type" required>
-          <option value="breakfast">Breakfast</option>
-          <option value="lunch">Lunch</option>
-          <option value="snack">Snack</option>
-          <option value="dinner">Dinner</option>
-        </select>
+      <form method="GET" action="/report" class="hero-actions">
+        <div style="min-width:220px;">
+          <label>Start</label>
+          <input type="date" name="start_date" value="{{ start_date }}" />
+        </div>
+        <div style="min-width:220px;">
+          <label>End</label>
+          <input type="date" name="end_date" value="{{ end_date }}" />
+        </div>
 
-        <label>Food Item</label>
-        <select name="food_item_id" required>
-          {% for f in foods %}
-            <option value="{{ f['id'] }}">{{ f['name'] }}</option>
-          {% endfor %}
-        </select>
+        <button class="btn btn-primary" type="submit" style="align-self:end;">Generate</button>
 
-        <label>Quantity (servings)</label>
-        <input type="number" name="quantity" step="0.25" min="0.25" value="1" required>
-
-        <button type="submit">Add Food</button>
+        <a class="btn btn-ghost" style="align-self:end;"
+           href="/report/pdf?start={{ start_date }}&end={{ end_date }}">
+          Download PDF
+        </a>
       </form>
     </div>
 
-    <div class="card">
-      <h3>Add Water</h3>
-      <form method="POST" action="{{ url_for('tracker') }}">
-        <input type="hidden" name="action" value="add_water">
+    <div style="height:16px;"></div>
 
-        <label>Glasses</label>
-        <input type="number" name="glasses" min="1" max="30" required>
+    {% if graph_file %}
+      <div class="card">
+        <h2>Calories Trend</h2>
+        <img src="{{ url_for('static', filename='reports/' + graph_file) }}"
+             style="width:100%; border-radius:14px; border:1px solid rgba(0,0,0,0.1);">
+      </div>
+      <div style="height:16px;"></div>
+    {% endif %}
 
-        <button type="submit" class="green">Add Water</button>
-      </form>
+    <div class="grid">
+      <div class="col-6">
+        <div class="card">
+          <h2>Daily Calories</h2>
+          {% if daily and daily|length > 0 %}
+            <table class="table">
+              <tr><th>Date</th><th>Total Calories</th></tr>
+              {% for r in daily %}
+                <tr>
+                  <td>{{ r[0] }}</td>
+                  <td>{{ r[1] }}</td>
+                </tr>
+              {% endfor %}
+            </table>
+          {% else %}
+            <p class="muted">No meals logged in this period.</p>
+          {% endif %}
+        </div>
+      </div>
 
-      <p style="margin-top:10px;"><b>Total water today:</b> {{ water_total }} glasses</p>
+      <div class="col-6">
+        <div class="card">
+          <h2>Daily Water</h2>
+          {% if water and water|length > 0 %}
+            <table class="table">
+              <tr><th>Date</th><th>Total Glasses</th></tr>
+              {% for w in water %}
+                <tr>
+                  <td>{{ w[0] }}</td>
+                  <td>{{ w[1] }}</td>
+                </tr>
+              {% endfor %}
+            </table>
+          {% else %}
+            <p class="muted">No water logged in this period.</p>
+          {% endif %}
+        </div>
+      </div>
     </div>
+
   </div>
+</main>
 
-  <div class="card">
-    <h3>Today’s Nutrition Totals</h3>
-    <p><b>Calories:</b> {{ totals['calories'] }}</p>
-    <p><b>Protein:</b> {{ totals['protein'] }} g</p>
-    <p><b>Carbs:</b> {{ totals['carbs'] }} g</p>
-    <p><b>Fat:</b> {{ totals['fat'] }} g</p>
-    <p><b>Sugar:</b> {{ totals['sugar'] }} g</p>
-  </div>
-
-  <div class="grid">
-    <div class="card">
-      <h3>Food History (Today)</h3>
-      {% if today_food %}
-        <table class="table">
-          <tr><th>Meal</th><th>Item</th><th>Qty</th><th>Cal</th><th></th></tr>
-          {% for r in today_food %}
-            <tr>
-              <td>{{ r['meal_type'] }}</td>
-              <td>{{ r['name'] }}</td>
-              <td>{{ r['quantity'] }}</td>
-              <td>{{ r['calories'] }}</td>
-              <td>
-                <form method="POST" action="{{ url_for('tracker') }}">
-                  <input type="hidden" name="action" value="delete_food">
-                  <input type="hidden" name="log_id" value="{{ r['id'] }}">
-                  <button type="submit" class="danger">Delete</button>
-                </form>
-              </td>
-            </tr>
-          {% endfor %}
-        </table>
-      {% else %}
-        <p>No food logged today.</p>
-      {% endif %}
-    </div>
-
-    <div class="card">
-      <h3>Water Entries (Today)</h3>
-      {% if water_rows %}
-        <table class="table">
-          <tr><th>Glasses</th><th>Date</th><th></th></tr>
-          {% for w in water_rows %}
-            <tr>
-              <td>{{ w['glasses'] }}</td>
-              <td>{{ w['log_date'] }}</td>
-              <td>
-                <form method="POST" action="{{ url_for('tracker') }}">
-                  <input type="hidden" name="action" value="delete_water">
-                  <input type="hidden" name="water_id" value="{{ w['id'] }}">
-                  <button type="submit" class="danger">Delete</button>
-                </form>
-              </td>
-            </tr>
-          {% endfor %}
-        </table>
-      {% else %}
-        <p>No water entries today.</p>
-      {% endif %}
-    </div>
-  </div>
-
-</div>
 </body>
 </html>

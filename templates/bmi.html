@@ -1,54 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>BMI Calculator</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BMI Calculator | Arogya</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
 
-<header>
-    <h1>Arogya Diet</h1>
-    <nav>
-        <a href="/tracker">Track Diet</a>
-        <a href="/report">Report</a>
-        <a href="/meal-plan">Meal Plan</a>
-        <a href="/bmi">BMI Check</a>
-        <a href="/about">About</a>
-        <a href="/logout">Logout</a>
+<!-- ✅ Modern Navbar (same for all pages) -->
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <div class="brand-mark">A</div>
+      <div>
+        <div class="brand-name">Arogya</div>
+        <div class="brand-sub">Diet & Fitness</div>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a href="/">Home</a>
+      <a href="/tracker">Tracker</a>
+      <a href="/bmi" class="active">BMI</a>
+      <a href="/meal-plan">Meal Plan</a>
+      <a href="/report">Reports</a>
+      <a href="/about">About</a>
+      <a href="/logout" class="nav-ghost">Logout</a>
     </nav>
+  </div>
 </header>
 
-<div class="container">
-    <h1>BMI Calculator</h1>
+<main class="page">
+  <div class="page-inner">
 
-    <form method="POST" class="card">
-        <label>Weight (kg)</label>
-        <input type="number" name="weight" step="0.1" required>
+    <!-- Hero -->
+    <div class="card hero" style="text-align:center;">
+      <h1 class="hero-title">BMI Calculator</h1>
+      <p class="muted" style="margin-top:8px;">
+        Calculate your BMI first to get your personalised meal plan and workout recommendations.
+      </p>
+    </div>
 
-        <label>Height (cm)</label>
-        <input type="number" name="height" step="0.1" required>
+    <div style="height:14px;"></div>
 
-        <button type="submit">Calculate BMI</button>
-    </form>
-
-    {% if bmi is not none %}
+    <!-- Form + Results -->
+    <div class="grid">
+      <div class="col-6">
         <div class="card">
-            <h2>Your BMI: {{ bmi }}</h2>
-            <p>Category: {{ category }}</p>
+          <h2>Enter Your Details</h2>
+
+          <form method="POST">
+            <label>Weight (kg)</label>
+            <input type="number" name="weight" step="0.1" required>
+
+            <label>Height (cm)</label>
+            <input type="number" name="height" step="0.1" required>
+
+            <button class="btn btn-primary" type="submit" style="width:100%;">Calculate BMI</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <div class="card">
+          {% if bmi is not none %}
+            <h2>Your Result</h2>
+            <p class="muted" style="margin-top:6px;">
+              <b>BMI:</b> {{ bmi }} <br>
+              <b>Category:</b> {{ category }}
+            </p>
+
+            <div style="height:12px;"></div>
 
             {% if suggested_plans %}
-                <h3>Recommended Meal Plans</h3>
+              <h3 style="margin-bottom:8px;">Recommended Meal Plans</h3>
+
+              <div class="pill-row">
                 {% for plan in suggested_plans %}
-                    <form action="{{ url_for('meal_plan') }}" method="GET">
-                        <input type="hidden" name="name" value="{{ plan }}">
-                        <button type="submit">{{ plan }}</button>
-                    </form>
+                  <form action="{{ url_for('meal_plan') }}" method="GET" style="margin:0;">
+                    <input type="hidden" name="name" value="{{ plan }}">
+                    <button class="btn btn-ghost" type="submit">{{ plan }}</button>
+                  </form>
                 {% endfor %}
+              </div>
             {% endif %}
+
+            <div style="height:16px;"></div>
+
+            <h3 style="margin-bottom:8px;">Recommended Workout Plan</h3>
+
+            {% if category == "Underweight" %}
+              <div class="workout-box">
+                <b>Goal:</b> Strength + muscle gain (3–4 days/week)
+                <ul>
+                  <li>Day 1: Full body (squats, push-ups, rows)</li>
+                  <li>Day 2: Rest / light walk</li>
+                  <li>Day 3: Upper body (bench/push-ups, shoulder press)</li>
+                  <li>Day 4: Lower body (squats, lunges, deadlift pattern)</li>
+                </ul>
+              </div>
+            {% elif category == "Healthy" %}
+              <div class="workout-box">
+                <b>Goal:</b> Fitness + balance (4 days/week)
+                <ul>
+                  <li>2 days strength (full body)</li>
+                  <li>1 day cardio (20–30 mins brisk walk/jog)</li>
+                  <li>1 day mobility + core (planks, stretches)</li>
+                </ul>
+              </div>
+            {% elif category == "Overweight" %}
+              <div class="workout-box">
+                <b>Goal:</b> Fat loss + stamina (4–5 days/week)
+                <ul>
+                  <li>3 days cardio (walking, cycling 25–40 mins)</li>
+                  <li>2 days strength (light full body)</li>
+                  <li>Daily: 6k–10k steps target</li>
+                </ul>
+              </div>
+            {% else %}
+              <div class="workout-box">
+                <b>Goal:</b> Safe weight loss (low impact, 5 days/week)
+                <ul>
+                  <li>Low impact cardio: 30–45 mins (walking, cycling)</li>
+                  <li>Light strength: chair squats, wall push-ups, resistance bands</li>
+                  <li>Stretching + mobility daily</li>
+                </ul>
+              </div>
+            {% endif %}
+
+          {% else %}
+            <h2>Personalised Plans</h2>
+            <p class="muted">
+              Calculate your BMI to unlock a recommended meal plan and workout plan.
+            </p>
+
+            <div class="workout-box" style="margin-top:10px;">
+              <b>Tip:</b> Enter your current weight and height to get your category and suggestions instantly.
+            </div>
+          {% endif %}
         </div>
-    {% endif %}
-</div>
+      </div>
+    </div>
+
+  </div>
+</main>
 
 </body>
 </html>

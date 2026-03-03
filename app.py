@@ -11,7 +11,10 @@ matplotlib.use("Agg")  # important for saving graphs without GUI
 import matplotlib.pyplot as plt
 
 from reportlab.lib.pagesizes import A4
-from reportlab.pdfgen import canvas
+from reportlab.pdfgen import canvas 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+app = Flask(__name__, template_folder=os.path.join(BASE_DIR, "templates"),
+            static_folder=os.path.join(BASE_DIR, "static"))
 
 
 app = Flask(__name__)

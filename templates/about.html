@@ -1,66 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About – Arogya Diet Management Tool</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Arogya</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
-<body>
+<body class="home-bg">
 
-    <header>
-        <h1>Arogya Diet Management Tool</h1>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/tracker">Track Diet</a></li>
-                <li><a href="/meal_plan">Meal Plan</a></li>
-                <li><a class="active" href="/about">About</a></li>
-            </ul>
-        </nav>
-    </header>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <div class="brand-mark">A</div>
+      <div>
+        <div class="brand-name">Arogya</div>
+        <div class="brand-sub">Diet & Fitness</div>
+      </div>
+    </div>
 
-    <main>
-        <section class="hero">
-            <h1>About Arogya</h1>
-            <p>
-                Arogya is a simple and user-friendly diet management tool designed to help students, 
-                professionals, and health-conscious individuals track their meals, calories, and nutrition 
-                goals more efficiently.
-            </p>
-        </section>
+    <nav class="nav">
+      <a href="/">Home</a>
+      <a href="/tracker">Tracker</a>
+      <a href="/bmi">BMI</a>
+      <a href="/meal_plan">Meal Plan</a>
+      <a href="/report">Reports</a>
+      <a href="/about" class="active">About</a>
+      <a href="/logout" class="nav-ghost">Logout</a>
+    </nav>
+  </div>
+</header>
 
-        <section class="form-container">
-            <h2>Our Mission</h2>
-            <p>
-                The goal of Arogya is to encourage healthy eating habits by allowing users to easily log 
-                their daily meals, monitor calorie intake, and generate customized meal plans. 
-                We believe that small, consistent changes in diet can lead to major improvements 
-                in overall health.
-            </p>
+<main class="page">
+  <div class="page-inner">
 
-            <h2>What You Can Do</h2>
-            <ul>
-                <li>Track calories and nutrients from your daily meals.</li>
-                <li>Create personalized meal plans.</li>
-                <li>Understand healthier food choices.</li>
-                <li>Maintain diet goals for weight gain, weight loss, or balanced nutrition.</li>
-            </ul>
+    <!-- HERO TABLE -->
+    <section class="index-table">
+      <h1 class="index-h1" style="font-size:38px;">About Arogya</h1>
+      <p class="index-p">
+        Arogya is a diet & fitness management tool that helps you track meals, hydration,
+        and nutrition goals while providing structured meal and workout plans.
+      </p>
 
-            <h2>Why We Built This Project</h2>
-            <p>
-                This project was created as part of a university assignment to demonstrate web development 
-                skills using Flask, HTML, CSS, and JavaScript. The aim was to build a fully functional 
-                tool with clean UI, good routing, templates, and user-friendly interaction.
-            </p>
-        </section>
-    </main>
+      <div class="index-tags">
+        <span class="tag">🍽 Meal Tracking</span>
+        <span class="tag">💧 Hydration</span>
+        <span class="tag">📊 Weekly Reports</span>
+        <span class="tag">🏋 Workout Plans</span>
+      </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2025 Arogya</p>
-    </footer>
+    <div style="height:16px;"></div>
+
+    <!-- CONTENT TABLES -->
+    <section class="about-grid-new">
+
+      <div class="index-table">
+        <h2 class="index-h2">Our Mission</h2>
+        <p class="index-p" style="max-width:none;">
+          We aim to promote healthy eating habits by helping users log meals, monitor calorie intake,
+          and follow personalised diet plans. Small consistent changes create long-term health benefits.
+        </p>
+
+        <div style="height:14px;"></div>
+
+        <h2 class="index-h2">What You Can Do</h2>
+        <ul class="about-list-new">
+          <li>Track calories and nutrients daily</li>
+          <li>Monitor hydration goals</li>
+          <li>Calculate BMI and get recommendations</li>
+          <li>Follow workout plans based on your goal</li>
+          <li>Generate weekly reports to see progress</li>
+        </ul>
+      </div>
+
+      <div class="index-table">
+        <h2 class="index-h2">Why We Built This Project</h2>
+        <p class="index-p" style="max-width:none;">
+          This project demonstrates full-stack web development using Flask, HTML and CSS with dynamic
+          data tracking, clean routing, and a modern user interface.
+        </p>
+
+        <div style="height:14px;"></div>
+
+        <h2 class="index-h2">Tech Used</h2>
+        <ul class="about-list-new">
+          <li>Flask (Python)</li>
+          <li>SQLite database</li>
+          <li>HTML / CSS templates</li>
+          <li>Matplotlib (graphs)</li>
+          <li>ReportLab (PDF reports)</li>
+        </ul>
+      </div>
+
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">© 2025 Arogya</footer>
 
 </body>
 </html>
-
